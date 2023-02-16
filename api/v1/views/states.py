@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ The api.v1.views.states module """
+from api.v1.views import app_views
 from models import storage
 from flask import jsonify, abort, make_response, request
-from models.state import Statee
+from models.state import State
 
 
 @app_views.route('/api/v1/states', strict_slashes=False)
@@ -56,7 +57,7 @@ def create_state():
 
 
 @app_views.route('/api/v1/states/<state_id>',
-                 methods=['POST'], strict_slashes=False)
+                 methods=['PUT'], strict_slashes=False)
 def update_state():
     """ A function that updates a State Object """
     state = storage.get("State", state_id)
