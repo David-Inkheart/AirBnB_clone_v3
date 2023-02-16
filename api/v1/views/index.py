@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
+"""The index module for the App """
+=======
 """ The index module for the App """
+>>>>>>> master
 from models.amenity import Amenity
 from models.city import City
 from models.place import Place
