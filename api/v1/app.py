@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""app module to handle instantiation and
+"""The app module to handle instantiation and
 registration of blueprint"""
 from api.v1.views import app_views
 from flask import Flask, jsonify, make_response
