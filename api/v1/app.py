@@ -5,15 +5,17 @@ from api.v1.views import app_views
 from flask import Flask, jsonify, make_response
 from models import storage
 import os
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
+cors = CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
 
 @app.teardown_appcontext
 def teardown_appcontext(exception):
-    """ Handeles the deallocation of resources """
+    """ Handles the deallocation of resources """
     storage.close()
 
 
